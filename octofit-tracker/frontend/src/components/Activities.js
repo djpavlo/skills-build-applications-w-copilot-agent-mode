@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-const BASE = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api`;
 
 function SimpleModal({ show, onClose, title, children }) {
   if (!show) return null;
@@ -31,7 +30,7 @@ export default function Activities() {
   const [showRaw, setShowRaw] = useState(false);
   const [rawData, setRawData] = useState(null);
 
-  const endpoint = `${BASE}/activities/`;
+  const endpoint = 'https://$REACT_APP_CODESPACE_NAME-8000.app.github.dev/api/activities/';
 
   const fetchData = () => {
     console.log('Endpoint (Activities):', endpoint);
